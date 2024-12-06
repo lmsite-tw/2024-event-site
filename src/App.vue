@@ -22,7 +22,7 @@ onMounted(getProgram);
         <h2>載入中...</h2>
       </div>
       <div v-if="!loading" class="content">
-      <p v-for="(i) in pgr1" :key="index" class="maincontent" v-bind="programs">
+      <p v-for="(i, index) in pgr1" :key="index" class="maincontent">
         <span><span>{{i.id}}</span>. <span>{{ i.type }}</span> <span>{{ i.name }}</span> <span>{{ i.program }}</span></span>
         <br />
       </p>
