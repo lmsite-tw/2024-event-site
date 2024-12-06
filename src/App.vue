@@ -9,7 +9,11 @@ interface Programs {
   program: string;
 }
 async function getProgram() {
-  const pullURL = await fetch('https://v4.yuanhau.com/api/db/ai-yue-wu-2024-sheng-dan-yin-yue-hui');
+  const pullURL = await fetch('https://v4-api.yuanhau.com/api/db/ai-yue-wu-2024-sheng-dan-yin-yue-hui',
+  {
+    method: 'GET',
+  }
+  );
   const pullData = await pullURL.json();
   pgr1.value = pullData;
   loading.value = false;
