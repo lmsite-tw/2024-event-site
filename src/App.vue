@@ -10,7 +10,7 @@ const pgr1 = ref([]);
 
 // Pull data
 async function getProgram() {
-  const pullURL = await fetch('http://localhost:3000/api/db/ai-yue-wu-2024-sheng-dan-yin-yue-hui');
+  const pullURL = await fetch('http://v4.yuanhau.com/api/db/ai-yue-wu-2024-sheng-dan-yin-yue-hui');
   const pullData = await pullURL.json();
   pgr1.value = pullData;
   loading.value = false;
