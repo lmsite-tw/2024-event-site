@@ -11,7 +11,7 @@ interface Programs {
 async function getProgram() {
   const pullURL = await fetch('https://v4-api.yuanhau.com/api/db/ai-yue-wu-2024-sheng-dan-yin-yue-hui',
   {
-    method: 'GET',
+    method: 'POST',
   }
   );
   const pullData = await pullURL.json();
