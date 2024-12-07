@@ -3,24 +3,24 @@ body {
   color:white;
   font-family:Arial, Helvetica, sans-serif;
   text-align:center;
-  align-itema:center;
+  align-items:center;
 }
 p.maincontent {
   font-size: 16px;
   text-align: center;
 }
 nav {
-  background-color:rgb(206, 8, 8);
+  color:white;
   background-image:url('https://utfs.io/f/1doOIeMoMsm25NWbkROLZNHRpMTxJEYP27K6Sklwfh9yWI3F');
   background-size:cover;
-  background-repeat:no-repeat;
-  color:white;
+  border-radius:10px;
   width:fill;
   padding:10px;
   top:0;
   left:0;
   right:0;
   margin:0;
+  padding:0;
   position:sticky;
   z-index:100;
   margin-bottom:0px;
@@ -33,7 +33,11 @@ h1.title {
   margin-bottom:0;
 }
 div.blur {
-  background-color:rgba(101, 101, 101, 0.627);
+  background: rgba(255,255,255,0.2);
+  -webkit-backdrop-filter: blur(17px);
+  backdrop-filter: blur(17px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
   width:fill;
   padding:10px;
   top:0;
@@ -51,20 +55,38 @@ footer {
   right:0;
   margin:0;
 }
-.spinner {
-   width: 56px;
-   height: 56px;
-   border-radius: 50%;
-   align-items:center;
-   justify-content:center;
-   background: radial-gradient(farthest-side,#2323e8 94%,#0000) top/9px 9px no-repeat,
-          conic-gradient(#0000 30%,#2323e8);
-   -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
-   animation: spinner 0.8s infinite linear;
+/* From 10015.io */
+.loader {
+  width: 72px;
+  height: 72px;
+  display: grid;
+  animation: spinner-plncf9 3.2s infinite;
 }
 
-@keyframes spinner {
-   100% {
-      transform: rotate(1turn);
-   }
+.loader::before,
+.loader::after {
+  content: "";
+  grid-area: 1/1;
+  border: 11.5px solid;
+  border-radius: 50%;
+  border-color: #0cb717 #0cb717 #0000 #0000;
+  mix-blend-mode: darken;
+  animation: spinner-plncf9 0.8s infinite linear;
+}
+
+.loader::after {
+  border-color: #0000 #0000 #cb1616 #cb1616;
+  animation-direction: reverse;
+}
+
+@keyframes spinner-plncf9 {
+  100% {
+     transform: rotate(1turn);
+  }
+}
+div.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:100px;
 }

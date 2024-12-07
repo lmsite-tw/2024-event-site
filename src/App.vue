@@ -22,7 +22,9 @@ async function getProgram() {
   }
   const pullData = await pullURL.json();
   pgr1.value = pullData;
-  loading.value = false;
+  setTimeout(() => {
+    loading.value = false;
+  }, 500);
 }
 onMounted(getProgram);
 </script>
@@ -32,10 +34,11 @@ onMounted(getProgram);
       <h1 class="title">2024 聖誕音樂會 節目單</h1>
     </div>
   </nav>
-    <div v-if="loading" >
-        <div class="spinner"></div>
-        <h2>載入資料中...</h2>
+    <div v-if="loading">
+      <div class="loading">
+        <div class='loader'></div>
       </div>
+    </div>
       <div v-if="error" class="content">
         <h2>{{ error }}</h2>
       </div>
