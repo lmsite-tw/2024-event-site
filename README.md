@@ -11,7 +11,7 @@ const supabase = createClient(`${supabaseURL}`, `${supabasetoken}`)
 export default defineEventHandler(async (event) => {
     if (event.node.req.method === 'POST') {
         try {
-            const { data } = await supabase.from('aiyuewu2024shengdanyinyuehui').select()
+            const { data } = await supabase.from('SOURCETABLE').select()
             return data;
         } catch (error) {
             console.log('error', error);
