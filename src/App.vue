@@ -33,6 +33,7 @@ onMounted(getProgram);
     </div>
   </nav>
     <div v-if="loading" >
+        <div class="spinner"></div>
         <h2>載入資料中...</h2>
       </div>
       <div v-if="error" class="content">
