@@ -6,7 +6,6 @@
     X-XSS-Protection: 1; mode=block
     X-Content-Type-Options: nosniff
     Referrer-Policy: no-referrer
-    Feature-Policy: accelerometer 'none'; ambient-light-sensor 'none'; autoplay 'none'; camera 'none'; document-domain 'none'; encrypted-media 'none'; fullscreen 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; midi 'none'; payment 'none'; picture-in-picture 'none'; speaker 'none'; sync-xhr 'none'; usb 'none'; vr 'none'; vr-input-hardware-binding 'none'; geolocation 'none'; payment 'none'
     Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
     X-DNS-Prefetch-Control: off
     X-Download-Options: noopen
@@ -24,7 +23,6 @@
     X-XSS-Protection: 1; mode=block
     X-Content-Type-Options: nosniff
     Referrer-Policy: no-referrer
-    Feature-Policy: accelerometer 'none'; ambient-light-sensor 'none'; autoplay 'none'; camera 'none'; document-domain 'none'; encrypted-media 'none'; fullscreen 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; midi 'none'; payment 'none'; picture-in-picture 'none'; speaker 'none'; sync-xhr 'none'; usb 'none'; vr 'none'; vr-input-hardware-binding 'none'; geolocation 'none'; payment 'none'
     Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
     X-DNS-Prefetch-Control: off
     X-Download-Options: noopen
