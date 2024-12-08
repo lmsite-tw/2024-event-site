@@ -5,7 +5,7 @@
 ### API
 ```typescript
 import { createClient } from '@supabase/supabase-js'
-const suoabaseURL = process.env.SUPABASE_URL
+const supabaseURL = process.env.SUPABASE_URL
 const supabasetoken = process.env.SUPABASE_KEY
 const supabase = createClient(`${supabaseURL}`, `${supabasetoken}`)
 export default defineEventHandler(async (event) => {
