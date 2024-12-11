@@ -10,7 +10,7 @@ interface Programs {
   program: string;
 }
 async function getProgram() {
-  const pullURL = await fetch('https://v4-api.yuanhau.com/api/db/ai-yue-wu-2024-sheng-dan-yin-yue-hui',
+  const pullURL = await fetch('https://api.yuanhau.com/api/events/ai-yue-wu-2024-chrismas-theme-page-list',
   {
     method: 'POST',
   }
