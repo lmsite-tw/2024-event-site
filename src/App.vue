@@ -20,8 +20,9 @@ async function getProgram() {
     method: 'GET',
   }
   );
+  // Backup
   if (!pullURL.ok || pullURL.status === 404 || pullURL.status === 204 || pullURL.status === 500) {
-      const pullURLb = await fetch('https://yuanhau.com/api/events/ai-yue-wu-2024-chrismas-theme-page-list',
+      const pullURLb = await fetch('https://api.yuanhau.com/api/ai-yue-wu/2024-chrismas.ts',
       {
         method: 'POST',
       });
