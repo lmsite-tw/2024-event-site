@@ -28,7 +28,7 @@ async function getProgram() {
   }, 500);
 }
 
-useEffect(() => {
+onMounted(() => {
   getProgram();
   setInterval(getProgram, 1000 * 60 * 60)
 })
