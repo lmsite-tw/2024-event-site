@@ -22,7 +22,7 @@ async function getProgram() {
   );
   // Backup
   if (!pullURL.ok || pullURL.status === 404 || pullURL.status === 204 || pullURL.status === 500) {
-      const pullURLb = await fetch('https://api.yuanhau.com/api/ai-yue-wu/2024-chrismas.ts',
+      const pullURLb = await fetch('https://api.yuanhau.com/api/ai-yue-wu/2024-chrismas',
       {
         method: 'POST',
       });
