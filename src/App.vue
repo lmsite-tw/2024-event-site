@@ -2,6 +2,9 @@
 import {ref, onMounted} from 'vue';
 const loading = ref(true);
 const error = ref('');
+const today = new Date();
+const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+console.log(date);
 const pgr1 = ref<Programs[]>([]);
 interface Programs {
   id: number;
@@ -13,16 +16,25 @@ async function getProgram() {
   loading.value=true;
   const pullURL = await fetch('https://api.yuanhau.com/api/events/ai-yue-wu-2024-chrismas-theme-page-list',
   {
-    method: 'POST',
+    method: 'GET',
   }
   );
-  if (!pullURL.ok) {
-    error.value = '系統錯誤'
-    loading.value = false;
-    return;
-  }
-  const pullData = await pullURL.json();
-  pgr1.value = pullData;
+  if (!pullURL.ok || pullURL.status === 404 || pullURL.status === 204 || pullURL.status === 500) {
+      const pullURLb = await fetch('https://yuanhau.com/api/events/ai-yue-wu-2024-chrismas-theme-page-list',
+      {
+        method: 'POST',
+      });
+      if (!pullURLb.ok || pullURLb.status === 404 || pullURLb.status === 204 || pullURLb.status === 500) {
+        error.value = '系統錯誤'
+        loading.value = false;
+        return;
+      }
+      const pullData = await pullURLb.json();
+      pgr1.value = pullData;
+    } else {
+      const pullData = await pullURL.json();
+      pgr1.value = pullData;
+    }
   setTimeout(() => {
     loading.value = false;
   }, 500);
