@@ -10,6 +10,7 @@ interface Programs {
   program: string;
 }
 async function getProgram() {
+  loading.value=true;
   const pullURL = await fetch('https://api.yuanhau.com/api/events/ai-yue-wu-2024-chrismas-theme-page-list',
   {
     method: 'POST',
@@ -26,7 +27,11 @@ async function getProgram() {
     loading.value = false;
   }, 500);
 }
-onMounted(getProgram);
+
+useEffect(() => {
+  getProgram();
+  setInterval(getProgram, 1000 * 60 * 60)
+})
 </script>
 <template>
   <nav>
