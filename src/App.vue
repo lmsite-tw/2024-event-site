@@ -14,7 +14,8 @@ interface Programs {
 }
 async function getProgram() {
   loading.value=true;
-  const pullURL = await fetch('https://api.yuanhau.com/api/events/ai-yue-wu-2024-chrismas-theme-page-list',
+  if (date === '2024-12-21') {
+    const pullURL = await fetch('https://api.yuanhau.com/api/events/ai-yue-wu-2024-chrismas-theme-page-list',
   {
     method: 'GET',
   }
@@ -35,9 +36,14 @@ async function getProgram() {
       const pullData = await pullURL.json();
       pgr1.value = pullData;
     }
-  setTimeout(() => {
+    setTimeout(() => {
     loading.value = false;
   }, 500);
+  } else {
+    error.value = '節目單過期'
+    loading.value = false;
+    return;
+  }
 }
 
 onMounted(() => {
