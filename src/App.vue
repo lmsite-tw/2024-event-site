@@ -41,7 +41,7 @@ async function getProgram() {
     loading.value = false;
   }, 500);
   } else {
-    error.value = '節目單過期'
+    error.value = '節目單已過期'
     loading.value = false;
     return;
   }
